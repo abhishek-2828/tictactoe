@@ -58,20 +58,21 @@
 
 
 
-.blockText{
+.blockText {
     font-size: 50px;
     /* color: #2c2c54; */
 }
 
 
-.blockText.player_1{
+.blockText.player_X {
     color: #2c2c54;
 }
 
 
-.blockText.player_2{
-    color: #718093;
+.blockText.player_O {
+    color: #c23616;
 }
+
 
 .btnContainer {
     display: flex;

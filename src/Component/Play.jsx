@@ -26,12 +26,9 @@ const Play = () => {
     const [currentPlayer, setCurrentPlayer] = useState('X');
 
     const [X_wins, set_X_wins] = useState([]);
-
     const [O_wins, set_O_wins] = useState([]);
 
     const [draw, set_draw] = useState(get_draw_count);
-
-    const [toggle, setToggle] = useState(0);
     const [gameOver, setGameOver] = useState(false);
 
     const blockRefs = useRef([]);
@@ -96,21 +93,31 @@ const Play = () => {
     };
 
 
+    const getColorClass = (player) => {
+        return player === 'X' ? 'player_X' : 'player_O';
+    };
+
+
     const handleClick = (index) => {
         const blockElement = blockRefs.current[index];
 
         if (blockElement.innerHTML === '') {
-            if (toggle === 0 && !gameOver) {
-                blockElement.innerHTML = 'X';
-                setToggle(1);
+            const playerClass = getColorClass(currentPlayer);
+            console.log("playerClass", playerClass);
+            if (currentPlayer === 'X' && !gameOver) {
+                blockElement.innerHTML = currentPlayer;
+                blockElement.className = `blockText ${playerClass}`;
+                setCurrentPlayer('O');
                 set_X_wins((X_wins) => [...X_wins, index]);
-            } else if (toggle === 1 && !gameOver) {
-                blockElement.innerHTML = 'O';
-                setToggle(0);
+            } else if (currentPlayer === 'O' && !gameOver) {
+                blockElement.innerHTML = currentPlayer;
+                blockElement.className = `blockText ${playerClass}`;
+                setCurrentPlayer('X');
                 set_O_wins((O_wins) => [...O_wins, index]);
             }
         }
-    }
+    };
+
 
 
 
@@ -123,17 +130,7 @@ const Play = () => {
         blockRefs.current.forEach((block) => {
             block.innerHTML = '';
         });
-
     }
-
-
-    const getColorClass = (player) => {
-        return player === 'X' ? 'whiteText' : 'blackText';
-    };
-
-
-    // const toggleColor = toggle ? 'blockText player_1' : 'blockText Player_2';
-
 
 
     return (
@@ -151,7 +148,7 @@ const Play = () => {
                         onClick={() => handleClick(index)}
                     >
                         <h3
-                            className= "blockText"
+                            className="blockText"
                             ref={(element) => handleRef(index, element)}
                         >
 

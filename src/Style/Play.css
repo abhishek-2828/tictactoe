@@ -1,0 +1,97 @@
+.play_area {
+    font-family: "Acme", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border: 2px solid black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+
+.gametext {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+
+.winning-line {
+    background-color: yellow;
+    /* Highlight color */
+}
+
+
+.block_container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+
+.block {
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
+    background-blend-mode: multiply, multiply;
+}
+
+
+
+.block:hover {
+    background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    background-blend-mode: normal, lighten, soft-light;
+
+}
+
+
+
+.blockText{
+    font-size: 50px;
+    /* color: #2c2c54; */
+}
+
+
+.blockText.player_1{
+    color: #2c2c54;
+}
+
+
+.blockText.player_2{
+    color: #718093;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    box-sizing: border-box;
+
+}
+
+.actionBtn {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+    margin: 5px 10px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.blockTable {
+    font-size: 22px;
+    width: 300px;
+}

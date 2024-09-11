@@ -5,23 +5,21 @@
     align-items: center;
     margin: 5px;
     border: 2px solid black;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to right, #434343 0%, black 100%);
+
+
+
 }
 
 
-.gametext {
+.gameText {
     color: white;
     font-size: 40px;
     font-weight: 700;
-}
-
-
-.winning-line {
-    background-color: yellow;
-    /* Highlight color */
+    margin-top: 20px;
+    border-bottom: 4px solid #c23616;
 }
 
 
@@ -34,7 +32,6 @@
 
 
 .block {
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
     text-shadow: rgb(255, 255, 255) 1px 0 10px;
     width: 100px;
     height: 100px;
@@ -60,7 +57,7 @@
 
 .blockText {
     font-size: 50px;
-    /* color: #2c2c54; */
+    margin: unset;
 }
 
 
@@ -72,7 +69,6 @@
 .blockText.player_O {
     color: #c23616;
 }
-
 
 .btnContainer {
     display: flex;
@@ -96,3 +92,32 @@
     font-size: 22px;
     width: 300px;
 }
+
+
+.toggleContainer{
+    margin-top: 50px;
+}
+
+.toggleText{
+    font-size: 35px;
+    margin-bottom: unset;
+    color: white;    
+}
+
+
+@keyframes resizeFont {
+    0% {
+        font-size: 50px;
+    }
+    50% {
+        font-size: 65px;
+    }
+    100% {
+        font-size: 50px;
+    }
+}
+
+.flashAnimation {
+    animation: resizeFont 1s ease-in-out infinite;
+}
+
